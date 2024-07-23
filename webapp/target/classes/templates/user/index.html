@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorate="layout/layout"
+th:replace="~{layout/layout::layout(~{::body/content()})}">
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1>Welcome to the Dashboard</h1>
+        <p>This is the content area.</p>
+    </div>
+</body>
+</html>
