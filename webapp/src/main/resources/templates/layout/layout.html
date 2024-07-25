@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" th:fragment="layout (body)">
+<head>
+    <title>Thymeleaf Layout Example</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div th:replace="~{layout/header}"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div th:replace="~{layout/side_menu}"></div>
+            </div>
+            <div class="col-md-9">
+                <div layout:fragment="content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{layout/footer}"></div>
+
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.js}"></script>
+</body>
+</html>
