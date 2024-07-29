@@ -9,6 +9,7 @@ th:replace="~{layout/layout::layout(~{::body/content()})}">
     <div layout:fragment="content">
         <h1>Welcome to the Dashboard</h1>
         <p>This is the content area.</p>
+        <p>Please create user <a th:href="@{/user/create}">here</a></p>
     </div>
 </body>
 </html>

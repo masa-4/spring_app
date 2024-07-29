@@ -7,14 +7,14 @@ th:replace="~{layout/layout::layout(~{::body/content()})}">
 </head>
 <body>
     <div layout:fragment="content">
-      <form th:action="@{/user/createConfirm}" method="post">
+      <form th:action="@{/user/save}" method="post">
         <div class="form-group">
             <label for="username">User Name:</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+            <input type="text" class="form-control" id="username" name="username" required readonly th:value="${username}">
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="password" class="form-control" id="password" name="password" required readonly th:value="${password}">
         </div>
         <button type="submit" class="btn btn-primary mt-5">Sign In</button>
     </form>
