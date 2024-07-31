@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.example.webapp.entity.Users;
 import com.example.webapp.model.UserModel;
 import com.example.webapp.repository.UserRepository;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -17,5 +18,9 @@ public class UserService {
       user.Password = password;
       user.Email = "test_create@exmale.com";
       return userRepository.save(user);
+  }
+
+  public List<Users> getAllUsers() {
+    return userRepository.findAll();
   }
 }

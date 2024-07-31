@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import com.example.webapp.service.UserService;
 import com.example.webapp.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -18,7 +19,9 @@ public class UserController {
   }
 
   @GetMapping
-  public String index() {
+  public String index(Model model) {
+   List<Users> users =  userService.getAllUsers();
+    model.addAttribute("users", users);
     return "user/index";
   }
 
